@@ -109,6 +109,15 @@ const Form = () => {
     setAddForm(false);
   };
 
+  const resetData = () => {
+    const resetConfirm = window.confirm("Confirm to reset?");
+    if (isData.length > 0) {
+      if (resetConfirm) {
+        setData([]);
+      }
+    }
+  };
+
   return (
     <>
       {isData.length > 0 && (
@@ -129,6 +138,16 @@ const Form = () => {
             }
             title={"Add New"}
           />
+          {isData.length > 0 && (
+            <Button
+              onClick={resetData}
+              type={"button"}
+              className={
+                "bg-yellow-600 hover:bg-yellow-800 px-5 py-2 rounded text-white cursor-pointer mr-2 transition duration-300"
+              }
+              title={"Reset"}
+            />
+          )}
         </div>
       ) : (
         <form
