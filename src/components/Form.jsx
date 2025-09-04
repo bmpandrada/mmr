@@ -86,7 +86,7 @@ const Form = () => {
     setFormData({
       name: forUpdate.name,
       lastname: forUpdate.lastname,
-      status: forUpdate.status,
+      priority: forUpdate.priority,
       message: forUpdate.message,
     });
 
@@ -123,6 +123,7 @@ const Form = () => {
       {isData.length > 0 && (
         <Output
           data={isData}
+          addForm={addForm}
           handleDelete={handleDelete}
           handleUpdate={handleUpdate}
         />
